@@ -14,29 +14,35 @@ public class Baekjoon_1918_jiun {
 			char ch = expression.charAt(i);
 			switch (ch) {
 			case '(':
+				st.push(ch);
 				break;
 			case ')':
-				while(!st.isEmpty()) {
+				while (!st.isEmpty() && st.peek() != '(') {
 					System.out.print(st.pop());
 				}
+				st.pop();
 				break;
 			case '+':
 			case '-':
-				while(!st.isEmpty()) {
+				while (!st.isEmpty() && st.peek() != '(') {
 					System.out.print(st.pop());
 				}
 				st.add(ch);
 				break;
 			case '*':
 			case '/':
+				while (!st.isEmpty() && (st.peek() == '*' || st.peek() == '/')) {
+					System.out.print(st.pop());
+				}
+					
 				st.add(ch);
 				break;
 			default:
 				System.out.print(ch);
 			}
 		}
-		
-		while(!st.isEmpty()) { 
+
+		while (!st.isEmpty()) {
 			System.out.print(st.pop());
 		}
 	}
