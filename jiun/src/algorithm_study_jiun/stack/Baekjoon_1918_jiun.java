@@ -22,6 +22,11 @@ public class Baekjoon_1918_jiun {
 				break;
 			case '+':
 			case '-':
+				while(!st.isEmpty()) {
+					System.out.print(st.pop());
+				}
+				st.add(ch);
+				break;
 			case '*':
 			case '/':
 				st.add(ch);
@@ -31,5 +36,8 @@ public class Baekjoon_1918_jiun {
 			}
 		}
 		
+		while(!st.isEmpty()) { 
+			System.out.print(st.pop());
+		}
 	}
 }
