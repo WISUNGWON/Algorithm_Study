@@ -33,7 +33,7 @@ public class Beakjoon_14502_Sungwon {
 			if (map[nx][ny] == 0) { // Î≤ΩÏùº Í≤ΩÏö∞
 				map[nx][ny] = 1;
 				wallMaking(i, 1);
-				map[nx][ny] = 0; // Î≤? ?ã§?ãú ?êò?èåÎ¶¨Í∏∞
+				map[nx][ny] = 0; 
 			}
 		}
 		System.out.println(ans);
@@ -41,7 +41,7 @@ public class Beakjoon_14502_Sungwon {
 	} // end of main
 
 	private static void wallMaking(int space, int wallN) {
-		if (wallN == 3) { // Î≤? 3Í∞? ?ã§ ÎßåÎì§?óà?úºÎ©?
+		if (wallN == 3) { 
 			copy = new int[N][M];
 			for (int i = 0; i < N; i++) {
 				for (int j = 0; j < M; j++) {
@@ -58,7 +58,7 @@ public class Beakjoon_14502_Sungwon {
 			safetyZoneCounting();
 		} else { 
 			for (int i = space + 1; i < N * M; i++) {
-				int nx = i / M; // forÎ¨∏ÏùÑ ?ïúÏ§ÑÎ°ú ?ï† ?ïå?äî ?ó¥?ùò ?Å¨Í∏∞Î°ú ?ûò?ùº?ïº ?ï®
+				int nx = i / M; 
 				int ny = i % M;
 				if (map[nx][ny] == 0) {
 					map[nx][ny] = 1;
@@ -89,7 +89,7 @@ public class Beakjoon_14502_Sungwon {
 			int nx = dx[i] + x;
 			int ny = dy[i] + y;
 			if (nx >= 0 && nx < N && ny >= 0 && ny < M && copy[nx][ny] == 0) {
-				copy[nx][ny] = 3;
+				copy[nx][ny] = 2;
 				virusSpread(nx, ny);
 			}
 		}
