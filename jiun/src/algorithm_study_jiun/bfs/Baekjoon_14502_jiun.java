@@ -67,6 +67,7 @@ public class Baekjoon_14502_jiun {
 
 	private static void spreadVirus() {
 		spreadMap = new int[n][m];
+//		spreadMap = copyMap;
 		for (int k = 0; k < n; k++) {
 			System.arraycopy(copyMap[k], 0, spreadMap[k], 0, m);
 		}
