@@ -1,4 +1,5 @@
-package algorithm_study_jiun.hashmap;
+package algorithm_study_jiun;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,3 @@
-package algorithm_study_jiun.dfs;
 import java.util.Scanner;
 
 //https://www.acmicpc.net/problem/1167
