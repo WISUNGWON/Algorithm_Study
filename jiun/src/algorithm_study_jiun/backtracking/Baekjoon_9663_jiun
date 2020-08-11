@@ -68,3 +68,4 @@ public class Baekjoon_9663_jiun {
 		return true; //현재 col에 놓을 수 있는 경우(= 미리 배치된 queen에게 공격당하지 않는 경우) true리턴
 	}
 }
+
