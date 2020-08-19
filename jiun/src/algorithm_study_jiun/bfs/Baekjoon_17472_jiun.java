@@ -1,5 +1,5 @@
 package algorithm_study_jiun.bfs;
-// https://www.acmicpc.net/problem/17472
+//https://www.acmicpc.net/problem/17472
 /*
  * 1. 구역나누기(bfs)
  * 2. 다리 후보 만들기 
