@@ -5,7 +5,7 @@ import java.util.Collections;
 /**
  * nextPermutation으로 조합을 구현하여 1000 이하의 소수들 중 두 개를 골라 합하면 다른 소수가 될 경우를 출력
  */
-public class _0825_prime_nextPermutation_jiun {
+public class _0825_nextPermutation_jiun {
 	static int n = 0, r = 2;
 	private static boolean[] prime;
 
@@ -13,16 +13,12 @@ public class _0825_prime_nextPermutation_jiun {
 		prime = new boolean[1001];
 		ArrayList<Integer> primelist = new ArrayList<>();
 		 
-		// 소수 구하기: n의 최대약수는 n의 제곱근이다. 떄문에 루트n이하의 정수로 나누어지는 확인하면 됨.
+		// 소수 구하기: n에서 자기자신을 제외한 최대약수는 n의 제곱근이다. 떄문에 루트n이하의 정수로 나누어지는 확인하면 됨.
 		for (int i = 2; i <= 1000; i++) {
-			if(isPrime(i)) primelist.add(i);//
+			if(isPrime(i)) primelist.add(i);// 소수 추가
 		}
-		for (int i = 0; i < prime.length; i++) {
-			if (prime[i]) {
-				primelist.add(i); /// 소수 추가
-				n++;// 소수 갯수 세어주기
-			}
-		}
+
+		n = primelist.size();
 		int[] p = new int[n]; // 소수 조합선택을 위한 배열. 소수 갯수만큼 크기 지정.
 		
 		int cnt = 0;
@@ -36,7 +32,6 @@ public class _0825_prime_nextPermutation_jiun {
 		do {// prime으로 nextPermutation진행 -> nC2가 완성되었을 때 두 숫자의 합이 두 숫자와 다르면 출력
 			int sum = 0, index = 0;
 			int[] num = new int[2]; 
-			ArrayList<Integer> list = new ArrayList<>();
 			for (int i = 0; i < n; i++) {
 				if(p[i] == 1) { // 조합완성
 					sum += primelist.get(i);
