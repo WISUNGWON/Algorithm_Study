@@ -41,7 +41,7 @@ public class Custom_001_Junhyeong {
 		}
 	}
 	
-	static boolean nextCombination(int[] number) {
+	static boolean nextPermutation(int[] number) {
 		int i = N - 1;
 		while(i > 0 && number[i-1] >= number[i]) {
 			i --;
@@ -90,7 +90,7 @@ public class Custom_001_Junhyeong {
 			if(isPrime[sum]) {
 				sb.append(nums[0]).append('+').append(nums[1]).append('=').append(sum).append('\n');
 			}
-		} while(nextCombination(combNumber));
+		} while(nextPermutation(combNumber));
 		
 		System.out.print(sb.toString());
 		
