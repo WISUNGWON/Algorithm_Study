@@ -10,8 +10,6 @@ public class Baekjoon_16236_Junhyeong {
 
 	static int N;
 	
-	/** Baby Shark Size */
-	static int sz = 2; 
 	/** Baby Shark Position */
 	static int sr, sc;
 	static int[][] map;
@@ -26,12 +24,17 @@ public class Baekjoon_16236_Junhyeong {
 	
 	static int[][] ableFish = new int[40][2];
 	
-	static int bfs() {
+	static int bfs() { // 아기 상어가 한 마리 먹는 동안의 BFS
+		// 자원 초기화
 		resetVisited();
 		q.clear();
+		// 자원 초기화 끝
+		
+		// 초기 큐 상태
 		q.offer(new int[] {sr, sc});
 		visited[sr][sc] = true;
 		int qsize, fishCount, stage = 0;
+		// BFS 시작
 		while(!q.isEmpty()) {
 			qsize = q.size();
 			stage++;
@@ -42,20 +45,20 @@ public class Baekjoon_16236_Junhyeong {
 					int nr = pos[0] + dr[d];
 					int nc = pos[1] + dc[d];
 					if(0 <= nr && nr < N && 0 <= nc && nc < N 
-							&& !visited[nr][nc] && map[nr][nc] <= sharkLevel){
+							&& !visited[nr][nc] && map[nr][nc] <= sharkLevel){ // 지나갈 수 있는 곳이면 확인
 						visited[nr][nc] = true;
-						if(0 < map[nr][nc] && map[nr][nc] < sharkLevel) {
+						if(0 < map[nr][nc] && map[nr][nc] < sharkLevel) { // 먹을 수 있는 물고기면 먹을수있는 물고기 배열에 저장
 							ableFish[fishCount][0] = nr;
 							ableFish[fishCount][1] = nc;
 							fishCount++;
 						}
-						else if(fishCount == 0){
+						else if(fishCount == 0){ // 먹을 수 있는 물고기가 없을때만 큐에 넣는게 유효하다.
 							q.offer(new int[] {nr, nc});
 						}
 					}
 				}
 			}
-			if(fishCount > 0) {
+			if(fishCount > 0) { // 만약 먹을 수 있는 물고기가 있다면
 				int minr = Integer.MAX_VALUE;
 				int minc = Integer.MAX_VALUE;
 				for (int i = 0; i < fishCount; i++) {
