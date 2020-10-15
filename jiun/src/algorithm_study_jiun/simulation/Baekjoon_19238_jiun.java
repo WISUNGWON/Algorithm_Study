@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class Baekjoon_19238_jiun {
+public class Baekjoon_19238_jiun{
     static int n,m,fuel;
     static int map[][];
     static boolean visited[][];
@@ -41,9 +41,8 @@ public class Baekjoon_19238_jiun {
             int end_y = Integer.parseInt(a[3]);
             cust_list.add(new Info(start_x,start_y,end_x,end_y));
             map[start_x][start_y] = i+1;
-        } // -- input end --
-        
-        while(true) { // bfs
+        }
+        while(true) {
             
             if(cust_list.size()==0) {
                 System.out.println(fuel);
@@ -86,12 +85,8 @@ public class Baekjoon_19238_jiun {
                 return ;
             }
             fuel+=dist*2;
-            } // end of bfs
+            }
         }
-    
-    
-    
-    
     public static int get_dist(int x, int y,int end_x, int end_y) {
         Queue<Node> q = new LinkedList<>();
         q.add(new Node(x,y,0));
