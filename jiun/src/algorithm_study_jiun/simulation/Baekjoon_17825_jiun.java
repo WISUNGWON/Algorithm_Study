@@ -1,5 +1,5 @@
 // https://www.acmicpc.net/problem/17825
-
+// 틀린풀이
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
